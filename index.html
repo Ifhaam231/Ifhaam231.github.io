@@ -67,11 +67,16 @@
 			}
 			
 			.spoiler { 
-			  color: #ADD8E6; 
+				color: #ffffff; 
 			}
 
 			.spoiler:hover{
-			color: #000000;
+				color: #000000;
+			}
+			
+			#showbtn,#hidebtn {
+				width: 15%;
+				padding: 15px 32px;
 			}
 			
 			
@@ -79,11 +84,6 @@
 		
 		<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 		
-		<script>
-		function myFunction(element,clr) {
-			element.style.color = clr;
-		}
-		</script>
 		
 
 	</head>
@@ -184,9 +184,9 @@
 		<h2>Education</h2>
 		<h3>Undergraduate at Informatics Institute of Technology, <br>B. Eng. Software Engineering, <br>Wellawatta, <br>Sri Lanka, <br>2020-present</h3>
 		<p>Please see below for the modules that I have undertaken so far along with the final results(module marks) – <br>
-		(Kindly hover over the relevant module mark that you wish to see to make it visible)</p>
+		(Kindly hover over the relevant module mark that you wish to see to make it visible or click the appropriate buttons below)</p>
 				
-		<table style="background-color:green">
+		<table id="bgtbl" style="background-color:white">
 			<tr>
 				<th>Subject</th>
 				<th>Result</th>
@@ -251,51 +251,33 @@
 				<td>Algorithms: Theory, Design and Implementation</td>
 				<td class="spoiler">72</td>
 			</tr>
-		</table>
-		
-		
-			<input name="spoilerbtn" class="spoilerbutton" style="width:50%" type="button" value="Show Spoilers"  onclick="myFunction(this, 'red')">
-			
-			
-			<button id= "color">Change color!</button>
-			<script>
-			document.getElementById('color').onclick = changeColor; 
-			var currentColor = "red";
-			function changeColor() { 
-					if(currentColor == "red"){ 
-					   document.body.style.color = "green";
-					   currentColor = "green";
-					} else {
-					   document.body.style.color = "red";
-					   currentColor = "red";
-					} 
-				}
-			</script>
+		</table>		
+	
+		<br>
+	
+		<button id="showbtn">Show all marks</button>
+		<script>
+			const showbtn = document.getElementById('showbtn');
 
+			showbtn.addEventListener('click', function onClick(event) {
+			const bgtbl = document.getElementById('bgtbl');
 
+			bgtbl.style.backgroundColor = 'grey';
+			bgtbl.style.color = 'white';
+			});
+		</script>
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		<button id="hidebtn">Hide all marks</button>
+		<script>		
+			const hidebtn = document.getElementById('hidebtn');
+
+			hidebtn.addEventListener('click', function onClick(event) {
+			const bgtbl = document.getElementById('bgtbl');
+
+			bgtbl.style.backgroundColor = 'white';
+			bgtbl.style.color = 'black';
+			});
+		</script>
 		
 		</div>
 		
