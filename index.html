@@ -66,9 +66,25 @@
 				font-size: 20px;
 			}
 			
+			.spoiler { 
+			  color: #ADD8E6; 
+			}
+
+			.spoiler:hover{
+			color: #000000;
+			}
+			
+			
 		</style>
 		
 		<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+		
+		<script>
+		function myFunction(element,clr) {
+			element.style.color = clr;
+		}
+		</script>
+		
 
 	</head>
 	
@@ -146,7 +162,6 @@
 		<ul>
 		<li>Using Python to make a basic program to predict progression outcome of students in a university system
 		</ul>
-		</div>
 		
 		<ul>
 		<li>Created and edited <a href="under_construction.html">Sitemap</a></li>
@@ -154,6 +169,13 @@
 		<li>Created and edited <a href="under_construction.html">Additional details - Venom</a></li>
 		<li>Helped with planning and pictures of <a href="under_construction.html">Main page</a></li>
 		</ul>
+		
+				
+		<h3>Computer Trends Coursework</h3>
+		<h3>Web Design Project</h3>
+		<h3>Machine Learning Coursework</h3>
+		<h3>Algorithms Coursework</h3>
+		
 		</div>
 		
 		<br>
@@ -161,74 +183,120 @@
 		<div id="educa">
 		<h2>Education</h2>
 		<h3>Undergraduate at Informatics Institute of Technology, <br>B. Eng. Software Engineering, <br>Wellawatta, <br>Sri Lanka, <br>2020-present</h3>
-		<p>Please see below for the modules that I have undertaken so far along with the final results(module marks) – </p>
+		<p>Please see below for the modules that I have undertaken so far along with the final results(module marks) – <br>
+		(Kindly hover over the relevant module mark that you wish to see to make it visible)</p>
 				
-		<table>
+		<table style="background-color:green">
 			<tr>
 				<th>Subject</th>
 				<th>Result</th>
 			</tr>
 			<tr>
 				<td>Trends in Computer Science</td>
-				<td>72</td>
+				<td class="spoiler">72</td>
 			</tr>
 			<tr>
 				<td>Software Development 1</td>
-				<td>92</td>
+				<td class="spoiler">92</td>
 			</tr>
 			<tr>
 				<td>Software Development 2</td>
-				<td>90</td>
+				<td class="spoiler">90</td>
 			</tr>
 			<tr>
 				<td>Web Design and Development</td>
-				<td>90</td>
+				<td class="spoiler">90</td>
 			</tr>
 			<tr>
 				<td>Mathematics for Computing</td>
-				<td>84</td>
+				<td class="spoiler">84</td>
 			</tr>
 			<tr>
 				<td>Computer Systems Fundamentals</td>
-				<td>100</td>
+				<td class="spoiler">100</td>
 			</tr>
 			<tr>
 				<td>Digital Circuits and Logic Design</td>
-				<td>86</td>
+				<td class="spoiler">86</td>
 			</tr>
 			<tr>
 				<td>Working with Data</td>
-				<td>85</td>
+				<td class="spoiler">85</td>
 			</tr>
 			<tr>
 				<td>Designing Innovative Solutions</td>
-				<td>70</td>
+				<td class="spoiler">70</td>
 			</tr>
 			<tr>
 				<td>Academic Skills for Higher Education</td>
-				<td>80</td>
+				<td class="spoiler">80</td>
 			</tr>
 			<tr>
 				<td>Information Technology</td>
-				<td>88</td>
+				<td class="spoiler">88</td>
 			</tr>
 			<tr>
 				<td>Software Development Group Project</td>
-				<td>63</td>
+				<td class="spoiler">63</td>
 			</tr>
 			<tr>
 				<td>Machine Learning and Data Mining</td>
-				<td>66</td>
+				<td class="spoiler">66</td>
 			</tr>
 			<tr>
 				<td>Server-Side Web Development</td>
-				<td>74</td>
+				<td class="spoiler">74</td>
 			</tr>
 			<tr>
 				<td>Algorithms: Theory, Design and Implementation</td>
-				<td>72</td>
+				<td class="spoiler">72</td>
 			</tr>
 		</table>
+		
+		
+			<input name="spoilerbtn" class="spoilerbutton" style="width:50%" type="button" value="Show Spoilers"  onclick="myFunction(this, 'red')">
+			
+			
+			<button id= "color">Change color!</button>
+			<script>
+			document.getElementById('color').onclick = changeColor; 
+			var currentColor = "red";
+			function changeColor() { 
+					if(currentColor == "red"){ 
+					   document.body.style.color = "green";
+					   currentColor = "green";
+					} else {
+					   document.body.style.color = "red";
+					   currentColor = "red";
+					} 
+				}
+			</script>
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		</div>
 		
 		<br>
