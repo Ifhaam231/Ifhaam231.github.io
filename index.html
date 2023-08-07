@@ -8,6 +8,7 @@
 		Mohammed Ihtihsham Ifhaam Profile
 		</title>
 		
+		<!-- embedded css styles -->
 		<style>
 			body {
 				padding-left: 50px;
@@ -77,11 +78,10 @@
 			#showbtn,#hidebtn {
 				width: 15%;
 				padding: 15px 32px;
-			}
-			
-			
+			}			
 		</style>
 		
+		<!-- javascript provided by linkedin for a small profile badge -->
 		<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 		
 		
@@ -90,22 +90,25 @@
 	
 	<body>
 		
+		<!-- simple tag to reach the top of the page -->
 		<a id="top"></a>
 		
+		<!-- name and picture in big -->
 		<h1>Mohammed Ihthisham Ifhaam</h1>
 		
 		<img src="ifhaam.jpg" alt="Picture of Mohammed Ihthisham Ifhaam" title="Mohammed Ihthisham Ifhaam" width="300" class="center">
 		
+		<!-- brief intro section -->
 		<h2>Hello and welcome to a quick and simple page on me</h2>
 		<p>
 		Below you will find a bit more detailed information with regards to me, this is to supplement all
 		the information already provided in the CV, for additional details please feel free to contact me 
-		either by e-mail or phone all of which will be provided. Thank you for visiting this page.
+		either by e-mail or phone all of which are provided in the contacts section below. Thank you for visiting this page.
 		</p>
 		
 		<h2>Contents</h2>
 		
-		<!-- have contents section with links so it ccan be used to jump from one section to another in the page -->
+		<!-- contents section with links so it ccan be used to jump from one section to another in the page -->
 		<ol>
 			<li><a href="#prof">Profile</a></li>
 			<li><a href="#exper">Experience</a></li>
@@ -120,17 +123,22 @@
 		
 		<br>
 		
+		<!-- profile section about self -->
 		<div id="prof">
 		<h2>Profile</h2>
 		<p>
-		I am a student currently studying at Informatics Institute of Technology. I have just successfully finished my second year and am now moving on to my third year. I am hard-working, curious and willing to learn and improve. I am especially enthusiastic about coding itself and building new programs or updating existing ones always interest me. While that is my main interest I am more than willing to broaden my horizons and try any new things that come my way. While it is true that I am still new, I will always go into any task or project sent my way with a drive and passion to learn and understand them completely and then finally finish them to the best of my knowledge.
+		I am a student currently studying at Informatics Institute of Technology. I have just successfully finished my second year and am now moving on to my third year. I am hard-working, curious and always willing to learn and improve. I am especially enthusiastic about coding itself and building new programs or updating existing ones always interest me. While that is my main interest I am more than prepared to broaden my horizons and try any new things that come my way. While it is true that I am still new, I will always go into any task or project sent my way with a drive and passion to learn and understand them completely and then finally finish them to the best of my knowledge and ability.
 		</p>
 		</div>
 		
 		<br>
 		
+		<!-- section on university projects -->
 		<div id="exper">
 		<h2>Experience (University Projects)</h2>
+		
+		<p>Below you will find a few of the projects that I have done along with a brief description of exacty what I have done in them - </p>
+		
 		<h3>SDGP Second year group project</h3>
 		<ul>
 		<li>Assessing different research and design methodologies</li>
@@ -162,7 +170,14 @@
 		<ul>
 		<li>Using Python to make a basic program to predict progression outcome of students in a university system
 		</ul>
+				
+		<h3>Computer Trends Coursework</h3>
+		<ul>
+		<li>Dive into the current trends in Computer Science and write a report on it
+		<li>This included Quantum computing, AI and ethics as well as Internet of Things
+		</ul>
 		
+		<h3>Web Design Project</h3>
 		<ul>
 		<li>Created and edited <a href="under_construction.html">Sitemap</a></li>
 		<li>Created and edited <a href="under_construction.html">Now Showing page</a></li>
@@ -170,22 +185,33 @@
 		<li>Helped with planning and pictures of <a href="under_construction.html">Main page</a></li>
 		</ul>
 		
-				
-		<h3>Computer Trends Coursework</h3>
-		<h3>Web Design Project</h3>
 		<h3>Machine Learning Coursework</h3>
+		<ul>
+		<li>Take a set of given data and use machine learning and AI to identify and analyze these datasets
+		<li>Understand and output meaningful information from these datasets
+		<li>Create a learning model to do these tasks
+		<li>Evaluate the final learned models
+		</ul>
+		
 		<h3>Algorithms Coursework</h3>
+		<ul>
+		<li>Create a basic algorithm to determine the acyclicity of directed graphs
+		<li>Test different algorithms and find out the most efficient one
+		<li>Done using performance analysis
+		</ul>
 		
 		</div>
 		
 		<br>
 		
+		<!-- section on education -->
 		<div id="educa">
 		<h2>Education</h2>
 		<h3>Undergraduate at Informatics Institute of Technology, <br>B. Eng. Software Engineering, <br>Wellawatta, <br>Sri Lanka, <br>2020-present</h3>
 		<p>Please see below for the modules that I have undertaken so far along with the final results(module marks) – <br>
 		(Kindly hover over the relevant module mark that you wish to see to make it visible or click the appropriate buttons below)</p>
-				
+		
+		<!-- table with university module marks -->
 		<table id="bgtbl" style="background-color:white">
 			<tr>
 				<th>Subject</th>
@@ -254,7 +280,9 @@
 		</table>		
 	
 		<br>
-	
+		
+		<!-- Two buttons to show and hide the marks spoilers in the table by changing the background and text colour -->
+		<!-- code borrowrd and modified from https://bobbyhadz.com/blog/javascript-change-background-color-on-click -->
 		<button id="showbtn">Show all marks</button>
 		<script>
 			const showbtn = document.getElementById('showbtn');
@@ -283,6 +311,7 @@
 		
 		<br>
 		
+		<!-- section on awards -->
 		<div id="educaward">
 		<h2>Education - Awards</h2>
 		<ul>
@@ -293,6 +322,7 @@
 		
 		<br>
 		
+		<!-- section on Extracurricular Activites -->
 		<div id="extras">
 		<h2>Extracurricular Activites</h2>
 		<ul>
@@ -306,6 +336,7 @@
 		
 		<br>
 		
+		<!-- section on different skills -->
 		<div id="tech">
 		<h2>Technical Skills</h2>
 		<b>Coding Software – </b>
@@ -341,6 +372,7 @@
 		
 		<br>
 		
+		<!-- References section -->
 		<div id="refer">
 		<h2>References</h2>
 		<ul>
@@ -351,6 +383,7 @@
 		
 		<br>
 		
+		<!-- Contact section -->
 		<div id="call">
 		<h2>Contact</h2>
 		<h3>Phone</h3> 077-6006884
@@ -362,9 +395,11 @@
 		<h3>Linkedin Address</h3> <a href = "https://www.linkedin.com/in/ihthisham-ifhaam-7520b7259/">www.linkedin.com/in/ihthisham-ifhaam-7520b7259/</a>
 		<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="ihthisham-ifhaam-7520b7259" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://lk.linkedin.com/in/ihthisham-ifhaam-7520b7259?trk=profile-badge">Ihthisham Ifhaam</a></div>
 		</div>
-
+		
+		<!-- button to goto the tag indicated at the start of the body -->
 		<a href="#top" id="to_top"><div>Back to top of page</div></a>
 		
+		<!-- button to goto the main page of the website -->
 		<a href="index.html" id="to_index">To Index</a>
 		
 	</body>
