@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		
+		<meta charset="utf-8">
+		
+		<title>
+		Crystal Cinemas - Now showing
+		</title>
+		
+		<link href="stylesheet_ifhaam.css" rel="stylesheet">
+		<link href="stylesheet.css" rel="stylesheet">
+		
+		<style>
+			
+			/* displaying the html page as a table to ensure structure */
+			html {
+				display: table;
+				margin: auto;
+			}
+
+			body {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			
+			h1 {
+				text-align: center;
+			}
+			
+			/* set default thumbnail width */
+			.thumb {
+				width:  200px;
+				height: 300px;
+				margin: 10px;
+			}
+			
+			/* set default big image width */
+			.big {
+				float: left;
+				width: 700px;
+				margin-bottom: 100px;
+			}
+			
+			/* small change to teammates css to ensure good display of the navbar */
+			.navbar a {
+				padding: 8px;
+			}
+			
+			/* stylying the text that is to be displayed to the right of the image */
+			.text_desc {
+				float: right;
+				text-align: justify;
+				white-space: pre-wrap;
+				width: 450px;
+			}
+			
+			form {
+				padding-left: 50px;
+				padding-right: 50px;
+			}
+			
+			form input,select,button {
+			padding: 5px;
+			}
+			
+			/* hide radio button, making the image act as a radio button itself */
+			[type=radio] { 
+				position: absolute;
+				opacity: 0;
+				width: 0;
+				height: 0;
+			}
+
+			/* cursor around the image */
+			[type=radio] + img {
+				cursor: pointer;
+			}
+			
+			/* small border around selected image */
+			[type=radio]:checked + img {
+				outline: 2px solid #f00;
+			}
+			
+			button{
+				border-radius: 18px;
+				padding: 10px;
+			}
+			
+			.all_center {
+				text-align: center;
+			}
+			
+			a:link {
+			text-decoration: none;
+			}
+
+			a:visited {
+			text-decoration: none;
+			}
+
+			a:hover {
+			text-decoration: none;
+			}
+
+			a:active {
+			text-decoration: none;
+			}
+			
+			#page_edit_left {
+				text-align: center;
+				font-size: 10px;
+				position: fixed;
+				bottom: 5px;
+				left: 5%;
+				z-index: -1;
+				cursor: pointer;
+			}
+			
+			.spacing{
+			padding-left:25px;
+			}
+
+		</style>
+		
+		<script>
+			
+			// changing background colour, takes chosen option and outputs selected colour
+			function bg_colour_change(evnt) {
+				if (evnt.target.value === "red") {
+					document.body.style.backgroundColor = "red";
+				}
+				else if (evnt.target.value === "green") {
+					document.body.style.backgroundColor = "green";
+				}
+				else if (evnt.target.value === "blue") {
+					document.body.style.backgroundColor = "blue";
+				}
+				else if (evnt.target.value === "grey") {
+					document.body.style.backgroundColor = "grey";
+				}
+				else if (evnt.target.value === "white") {
+					document.body.style.backgroundColor = "white";
+				}
+				else if (evnt.target.value === "black") {
+					document.body.style.backgroundColor = "black";
+				}
+				else if (evnt.target.value === "orange") {
+					document.body.style.backgroundColor = "orange";
+				}
+				else if (evnt.target.value === "brown") {
+					document.body.style.backgroundColor = "brown";
+				}
+				else if (evnt.target.value === "yellow") {
+					document.body.style.backgroundColor = "yellow";
+				}
+			}
+			
+			function text_colour_change(evnt2) {
+				if (evnt2.target.value === "red") {
+					document.body.style.color = "red";
+				}
+				else if (evnt2.target.value === "green") {
+					document.body.style.color = "green";
+				}
+				else if (evnt2.target.value === "blue") {
+					document.body.style.color = "blue";
+				}
+				else if (evnt2.target.value === "grey") {
+					document.body.style.color = "grey";
+				}
+				else if (evnt2.target.value === "white") {
+					document.body.style.color = "white";
+				}
+				else if (evnt2.target.value === "black") {
+					document.body.style.color = "black";
+				}
+				else if (evnt2.target.value === "orange") {
+					document.body.style.color = "orange";
+				}
+				else if (evnt2.target.value === "brown") {
+					document.body.style.color = "brown";
+				}
+				else if (evnt2.target.value === "yellow") {
+					document.body.style.color = "yellow";
+				}
+			}
+			
+			// function to display a text based on the image that was clicked
+	        function displayRadioValue() {
+				var ele = document.getElementsByName('images');
+				
+				// for loop to check which image was clicked based on the value picked form the images radio group
+				for(i = 0; i < ele.length; i++) {
+					if(ele[i].checked && i==0){
+						document.getElementById("text_result").innerHTML	= 
+						"<h1>Venom</h1><br>\
+<h2>Synopsis</h2><br>\
+<p>After a faulty interview with the Life Foundation ruins his \
+career, former reporter Eddie Brock's life is in pieces. Six months later, he comes across the Life Foundation again, \
+and he comes into contact with an alien symbiote and becomes Venom, a parasitic antihero.</p><br>\
+<br>\
+<b>Director</b> - Ruben Fleischer<br><br>\
+<b>Cast</b> - <br>\
+Tom Hardy as <i>Eddie Brock and Venom</i><br>\
+Michelle Williams as <i>Anne Weying and Venom</i><br>\
+Riz Ahmed as <i>Carlton Drake and Riot</i><br>\
+Scott Haze as <i>Roland Treece</i><br>\
+Reid Scott as <i>Dan Lewis</i><br>\
+<br>\
+<b>Release date</b> - October 2018<br>\
+<br>\
+<b>Movie Length</b> - 1 hr 52 m<br>\
+<br>\
+<b>Additional Links</b> - <br>\
+<a href='https://www.imdb.com/title/tt1270797/' target='_blank'>ImDB</a><br>\
+<a href='https://en.wikipedia.org/wiki/Venom_(2018_film)' target='_blank'>Wikipedia</a><br>\
+<a href='https://www.youtube.com/watch?v=u9Mv98Gr5pY' target='_blank'>Trailer</a><br>\
+<br>\
+<b>Additional Information and details</b> - <br>\
+<a href='venom.html'>Click here</a><br>\<br>\
+<br>\
+"
+								}
+					else if(ele[i].checked && i==1){
+						document.getElementById("text_result").innerHTML	= 
+						"<h1>The Adam Project</h1><br>\
+<h2>Synopsis</h2><br>\
+<p>Adam Reed, age 12 and still grieving his father's sudden death the year before, walks into his garage one night to find a wounded pilot hiding there. This mysterious pilot turns out to be the older version of himself from the future, where time travel is in its infancy. He has risked everything to come back in time on a secret mission. Together they must embark on an adventure into the past to find their father, set things right, and save the world. As the three work together, both young and grown Adam come to terms with the loss of their father and have a chance to heal the wounds that have shaped them. Adding to the challenge of the mission, the two Adams discover that they really don't like each other much, and if they are to save the world, first they need to figure out how to get along.</p><br>\
+<br>\
+<b>Director</b> - Shawn Levy<br><br>\
+<b>Cast</b> - <br>\
+Ryan Reynolds as <i>Adam Reed</i><br>\
+Mark Ruffalo as <i>Louis Reed</i><br>\
+Jennifer Garner as <i>Ellie Reed</i><br>\
+Catherine Keener as <i>Maya Sorian</i><br>\
+Zoe Saldaña as <i>Laura Shane</i><br>\
+Alex Mallari Jr. as <i>Christos</i><br>\
+<br>\
+<b>Release date</b> - March 2022<br>\
+<br>\
+<b>Movie Length</b> - 1 hr 46 m<br>\
+<br>\
+<b>Additional Links</b> - <br>\
+<a href='https://www.imdb.com/title/tt2463208/' target='_blank'>ImDB</a><br>\
+<a href='https://en.wikipedia.org/wiki/The_Adam_Project' target='_blank'>Wikipedia</a><br>\
+<a href='https://www.youtube.com/watch?v=IE8HIsIrq4o' target='_blank'>Trailer</a><br>\
+<br>\
+<b>Additional Information and details</b> - <br>\
+<a href='adamproject.html'>Click here</a><br>\<br>\
+<br>\
+"
+							}
+					else if(ele[i].checked && i==2){
+						document.getElementById("text_result").innerHTML	= 
+						"<h1>The Lord of the Rings:<br>The Return of the King</h1><br>\
+<h2>Synopsis</h2><br>\
+<p>The former Fellowship members prepare for the final battle. While Frodo and Sam approach Mount Doom to destroy the One Ring, they follow Gollum, unaware of the path he is leading them to.</p><br>\
+<br>\
+<b>Director</b> - Peter Jackson<br><br>\
+<b>Cast</b> - <br>\
+Elijah Wood as <i>Frodo Baggins</i><br>\
+Ian McKellen as <i>Gandalf the White</i><br>\
+Viggo Mortensen as <i>Aragorn Elessar</i><br>\
+Sean Astin as <i>Samwise Gamgee</i><br>\
+Andy Serkis as <i>Sméagol Trahald / Gollum</i><br>\
+Dominic Monaghan as <i>Meriadoc Brandybuck</i><br>\
+John Rhys-Davies as <i>Gimli</i><br>\
+Orlando Bloom as <i>Legolas Greenleaf</i><br>\
+Bernard Hill as <i>Théoden</i><br>\
+David Wenham as <i>Faramir</i><br>\
+Hugo Weaving as <i>Elrond</i><br>\
+Cate Blanchett as <i>Galadriel</i><br>\
+John Noble as <i>Denethor</i><br>\
+Ian Holm as <i>Bilbo Baggins</i><br>\
+Sean Bean as <i>Boromir</i><br>\
+Marton Csokas as <i>Celeborn the Wise</i><br>\
+Lawrence Makoare as the <i>Witch-king of Angmar</i><br>\
+Thomas Robins as <i>Déagol Nahald</i><br>\
+<br>\
+<b>Release date</b> - December 2003<br>\
+<br>\
+<b>Movie Length</b> - 3 hr 21 m<br>\
+<br>\
+<b>Additional Links</b> - <br>\
+<a href='https://www.imdb.com/title/tt0167260/' target='_blank'>ImDB</a><br>\
+<a href='https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King' target='_blank'>Wikipedia</a><br>\
+<a href='https://www.youtube.com/watch?v=r5X-hFf6Bwo' target='_blank'>Trailer</a><br>\
+<br>\
+<br>\
+"
+							}
+					else if(ele[i].checked && i==3){
+						document.getElementById("text_result").innerHTML	= 
+						"<h1>David Attenborough:<br>A Life on Our Planet</h1><br>\
+<h2>Synopsis</h2><br>\
+<p>One man has seen more of the natural world than any other. This unique feature documentary is his witness statement. In his 93 years, David Attenborough has visited every continent on the globe, exploring the wild places of our planet and documenting the living world in all its variety and wonder. Now, for the first time he reflects upon both the defining moments of his lifetime as a naturalist and the devastating changes he has seen. Honest, revealing and urgent, DAVID ATTENBOROUGH: A LIFE ON OUR PLANET is a powerful first-hand account of humanity's impact on nature and a message of hope for future generations. Created by award-winning natural history filmmakers Silverback Films and global conservation organization WWF, the film is Directed by Alastair Fothergill, Jonnie Hughes and Keith Scholey and Executive Produced by Colin Butfield. Celebrated British naturalist Sir David Attenborough has a broadcasting career spanning over eight decades. He has visited every continent on the globe, exploring the wild places of our planet and bringing the wonders of the living world to audiences worldwide through groundbreaking natural history series. His work includes: Life on Earth, Planet Earth and more recently the Netflix original documentary series Our Planet.</p><br>\
+<br>\
+<b>Director</b> - Jonnie Hughes	<br><br>\
+<b>Cast</b> - <br>\
+David Attenborough as<i>David Attenborough</i><br>\
+<br>\
+<b>Release date</b> - October 2020<br>\
+<br>\
+<b>Movie Length</b> - 1 hr 23 m<br>\
+<br>\
+<b>Additional Links</b> - <br>\
+<a href='https://www.imdb.com/title/tt11989890/' target='_blank'>ImDB</a><br>\
+<a href='https://en.wikipedia.org/wiki/David_Attenborough:_A_Life_on_Our_Planet' target='_blank'>Wikipedia</a><br>\
+<a href='https://www.youtube.com/watch?v=64R2MYUt394' target='_blank'>Trailer</a><br>\
+<b>Additional Information and details</b> - <br>\
+<a href='david.html'>Click here</a><br>\<br>\
+<br>\
+"
+							}
+					else if(ele[i].checked && i==4){
+						document.getElementById("text_result").innerHTML	= 
+						"<h1>Inception</h1><br>\
+<h2>Synopsis</h2><br>\
+<p>Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable. Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible, inception. Instead of the perfect heist, Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea, but to plant one. If they succeed, it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems to predict their every move. An enemy that only Cobb could have seen coming.</p><br>\
+<br>\
+<b>Director</b> - Christopher Nolan<br><br>\
+<b>Cast</b> - <br>\
+Leonardo DiCaprio as <i>Dom Cobb</i><br>\
+Joseph Gordon-Levitt as <i>Arthur</i><br>\
+Elliot Page as <i>Ariadne</i><br>\
+Tom Hardy as <i>Eames</i><br>\
+Ken Watanabe as <i>Mr. Saito</i><br>\
+Dileep Rao as <i>Yusuf</i><br>\
+Cillian Murphy as <i>Robert Michael Fischer</i><br>\
+Tom Berenger as <i>Peter Browning</i><br>\
+Marion Cotillard as <i>Mal Cobb</i><br>\
+Pete Postlethwaite as <i>Maurice Fischer</i><br>\
+Michael Caine as <i>Professor Stephen Miles</i><br>\
+Lukas Haas as <i>Nash</i><br>\
+Talulah Riley as <i>Blonde</i><br>\
+<br>\
+<b>Release date</b> - July 2010<br>\
+<br>\
+<b>Movie Length</b> - 2 hr 28 m<br>\
+<br>\
+<b>Additional Links</b> - <br>\
+<a href='https://www.imdb.com/title/tt1375666/' target='_blank'>ImDB</a><br>\
+<a href='https://en.wikipedia.org/wiki/Inception' target='_blank'>Wikipedia</a><br>\
+<a href='https://www.youtube.com/watch?v=YoHD9XEInc0' target='_blank'>Trailer</a><br>\
+<b>Additional Information and details</b> - <br>\
+<a href='inception.html'>Click here</a><br>\<br>\
+<br>\
+"
+							}
+				}
+			}
+			
+			// function to show the bigger picture when a related thumbnail is clicked
+			function check_value(optnvalue) {
+				switch (optnvalue) {
+					case 1:
+						document.getElementById("imagebig").innerHTML = "<img src='posters/venom_big.jpg' alt='Venom movie poster big' title='Venom movie poster' class='big'>";
+						document.getElementById("text_result").innerHTML = ""
+						break;
+					case 2:
+						document.getElementById("imagebig").innerHTML = "<img src='posters/adam_big.webp' alt='The Adam Project movie poster big' title='The Adam Project movie poster' class='big'>";
+						document.getElementById("text_result").innerHTML = ""
+						break;
+					case 3:
+						document.getElementById("imagebig").innerHTML = "<img src='posters/lotr_big.jpg' alt='The Lord of the Rings:The Return of the King movie poster big' title='The Lord of the Rings:The Return of the King movie poster' class='big'>";
+						document.getElementById("text_result").innerHTML = ""
+						break;
+					case 4:
+						document.getElementById("imagebig").innerHTML = "<img src='posters/david_big.jpg' alt='David Attenborough:A Life on Our Planet movie poster big' title='David Attenborough:A Life on Our Planet movie poster' class='big'>";
+						document.getElementById("text_result").innerHTML = ""
+						break;
+					case 5:
+						document.getElementById("imagebig").innerHTML = "<img src='posters/inception_big.jpg' alt='Inception movie poster big' title='Inception movie poster' class='big'>";
+						document.getElementById("text_result").innerHTML = ""
+						break;
+				}
+			}
+			// later added functionality to above function above to delete text that was there
+			
+		</script>
+
+	</head>
+	
+	<body>
+		
+		<a id="top"></a>
+		
+		<!--BELOW Taken from team member-->
+		<div class="navbar">
+        <h1>Crystal Cinemas</h1>
+			<ul>   
+				<li><a href="main.html">Home</a></li>
+				<li><a href="movies_current.html">Now Showing</a></li>
+				<li><a href="quiz.html">Quiz</a></li>
+				<li><a href="sitemap.html">Sitemap</a></li>
+				<li><a href="query_form.html">Queries</a></li>
+				<li><a href="info.html">Students</a></li>
+				<li><a href="product.html">Buy Tickets</a></li>
+			</ul>
+		</div>
+		<!--ABOVE Taken from team member-->
+		
+		<br>
+		
+		<!-- pull down menus for chaning the background colour and text colour -->
+		<form class="all_center">
+			<label for="bg_colour"><b>Page background colour</b></label>
+			<select name="bg_colour" id="bg_colour" onchange="bg_colour_change(event)">
+				<option value="">---</option>
+				<option value="red">Red</option>
+				<option value="green">Green</option>
+				<option value="blue">Blue</option>
+				<option value="grey">Grey</option>
+				<option value="white">White</option>
+				<option value="black">Black</option>
+				<option value="orange">Orange</option>
+				<option value="brown">Brown</option>
+				<option value="yellow">Yellow</option>
+			</select>
+			
+			<label for="text_colour" class="spacing"><b>Page text colour</b></label>
+			<select name="text_colour" id="text_colour" onchange="text_colour_change(event)">
+				<option value="">---</option>
+				<option value="red">Red</option>
+				<option value="green">Green</option>
+				<option value="blue">Blue</option>
+				<option value="grey">Grey</option>
+				<option value="white">White</option>
+				<option value="black">Black</option>
+				<option value="orange">Orange</option>
+				<option value="brown">Brown</option>
+				<option value="yellow">Yellow</option>
+			</select>
+			
+			<span class="spacing"></span>
+			
+			<button type="button" onClick="window.location.reload();">Refresh Page</button>
+		</form>
+		
+		<h1>Now Showing</h1>
+
+		<!-- radio button form to select thumbnails -->
+		<form>
+			<label for="image1"><input type="radio" name="images" id="image1" value="1" onclick="check_value(1)"><img src="posters/venom_thumb.jpg" alt="Venom movie thumbnail" title="Venom movie" class="thumb"></label>
+
+			<label for="image2"><input type="radio" name="images" id="image2" value="2" onclick="check_value(2)"><img src="posters/adam_thumb.jpg" alt="The Adam Project movie thumbnail" title="The Adam Project movie" class="thumb"></label>
+
+			<label for="image3"><input type="radio" name="images" id="image3" value="3" onclick="check_value(3)"><img src="posters/lotr_thumb.jpg" alt="The Lord of the Rings:The Return of the King movie thumbnail" title="The Lord of the Rings:The Return of the King movie" class="thumb"></label>
+
+			<label for="image4"><input type="radio" name="images" id="image4" value="4" onclick="check_value(4)"><img src="posters/david_thumb.jpg" alt="David Attenborough:A Life on Our Planet movie thumbnail" title="David Attenborough:A Life on Our Planet movie" class="thumb"></label>
+
+			<label for="image5"><input type="radio" name="images" id="image5" value="5" onclick="check_value(5)"><img src="posters/inception_thumb.jpg" alt="Inception movie thumbnail" title="Inception movie" class="thumb"></label>
+		</form>
+		
+		<!-- further details button -->
+		<br>
+		<div class="all_center">
+		<button name="details" id="details" onclick="displayRadioValue()">Further details</button>
+		</div>
+		<br>
+
+		<!-- text from button click displayed here -->
+		<br>
+		<div id="text_result" class="text_desc"></div>
+		
+		<!-- image from radio button click displayed here -->
+		<div id="imagebig"></div>
+		
+		<a href="#top" id="top_btn">Back to top of page</a>
+		
+		<a href="sitemap.html" id="sitemap_btn">To Sitemap</a>
+		
+		<div id="page_edit_left">
+		<a href="ifhaam.html">Page Editor - M.I.Ifhaam</a>
+		</div>
+		
+	</body>
+</html>
