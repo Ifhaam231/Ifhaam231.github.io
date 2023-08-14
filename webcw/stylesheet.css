@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
+body{
+  background-color:#4c8bf5;
+}
+
+.navbar{
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+}
+
+.navbar h1{
+  font-family: oswald;
+  padding-left: 1%;
+  font-size: 30px;
+  color: #4c8bf5;
+}
+
+.navbar ul{
+  font-family: Quicksand;
+  font-size: 25px;
+  padding-top: 5px;
+}
+
+.navbar li{
+  display: inline;
+}
+
+.navbar a{
+  text-decoration: none;
+  text-align: center;
+  color: #4c8bf5;
+  border-radius: 10px;
+  border-style: solid;
+  padding: 10px 10px 10px 10px;
+  border-color: #4c8bf5;
+  margin-right: 5px;
+}
+
+.navbar a:hover{
+  color: #ffffff;
+  background-color: #4c8bf5;
+  border-color: #4c8bf5;
+  border-style: inset;
+}
